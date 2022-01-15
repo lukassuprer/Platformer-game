@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - Bullet
+  - FxTemporaire
+  - Ground
+  - Gun
+  - PowerUp
+  - Enemy Bullet
+  - Lava
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Room
+  - Water
+  - UI
+  - Ground
+  - Gun
+  - Player
+  - Post processing
+  - PowerUp
+  - Enemy
+  - BulletRocket
+  - EnemyBullet
+  - BulletShotgun
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 4266995507
+    locked: 0
+  - name: Gun
+    uniqueID: 1540154615
+    locked: 0
+  - name: UI
+    uniqueID: 1911175887
+    locked: 0
