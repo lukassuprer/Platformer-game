@@ -5,18 +5,20 @@ public class Score : MonoBehaviour
 {
     public float score = 0f;
     public float converter;
-    public float money = 0f;
-
+    public float money;
+    private ShopManager shopManager;
     public Text tScore;
     private void Start() {
-        money = PlayerPrefs.GetFloat("moneySaveShop");
+        //money = PlayerPrefs.GetFloat("SaveShop");
+        //Debug.Log(money);
     }
     private void Update()
     {
         if (converter >= 10)
-        {
-            money += 1;
+        { 
+            ScoreSave.money += 1;
             converter -= 10;
+            Save();
         }
         tScore.text = score.ToString();
 
@@ -27,11 +29,7 @@ public class Score : MonoBehaviour
     }
 
     public void Save(){
-        PlayerPrefs.SetFloat("moneySave", money);
+        PlayerPrefs.SetFloat("moneySaveShop", money);
         PlayerPrefs.Save();
-    }
-
-    private void OnDisable() {
-        Save();
     }
 }

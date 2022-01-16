@@ -1279,7 +1279,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
-  - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
@@ -1413,19 +1412,6 @@ Transform:
   m_Father: {fileID: 1446882930}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d28579af1e35c49a0a0e0151f568e3d8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distance: 10
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2343,6 +2329,7 @@ MonoBehaviour:
   ownedGuns: []
   noMoney: {fileID: 0}
   textMoney: {fileID: 0}
+  money: 0
   boolean: 0
   so:
     gunName: 
@@ -2738,6 +2725,49 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   levelGen: {fileID: 265866947}
+--- !u!1 &978026015
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 978026017}
+  - component: {fileID: 978026016}
+  m_Layer: 0
+  m_Name: ScoreSave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &978026016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978026015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ba97d544e3c2428f874eb21ea18569e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &978026017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978026015}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 365.8722, y: 245.7056, z: -10.759464}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1019851714
 GameObject:
   m_ObjectHideFlags: 0
@@ -3396,6 +3426,7 @@ MonoBehaviour:
   ownedGuns: []
   noMoney: {fileID: 0}
   textMoney: {fileID: 0}
+  money: 0
   boolean: 0
   so:
     gunName: 
@@ -3822,10 +3853,9 @@ MonoBehaviour:
   - {fileID: 875516460}
   - {fileID: 1883723003}
   enemyPrefabs:
-  - {fileID: 1966593398877635757, guid: 9ca2b6d8dc1714676ac857a2cde8e1aa, type: 3}
+  - {fileID: 6219385047474016012, guid: d1f3d2fa5eb324453b13e7022e1f91b4, type: 3}
   timeOut: 20
   lastSpawn: 0
-  enemySpawn: {fileID: 0}
 --- !u!4 &1784748890
 Transform:
   m_ObjectHideFlags: 0

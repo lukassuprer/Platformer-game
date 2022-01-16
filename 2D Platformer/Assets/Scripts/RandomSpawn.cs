@@ -47,13 +47,13 @@ public class RandomSpawn : MonoBehaviour
     public GameObject[] enemyPrefabs;
     public float timeOut;
     public float lastSpawn;
-    public ParticleSystem enemySpawn;
+    //public ParticleSystem enemySpawn;
 
     private void Update()
     {
         if (Time.time >= lastSpawn + timeOut)
         {
-            Instantiate(enemySpawn, transform.position, transform.rotation);
+            //Instantiate(enemySpawn, transform.position, transform.rotation);
             Invoke("Spawn", 3f);
             lastSpawn = Time.time;
             StartCoroutine(FasterSpawn());

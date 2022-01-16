@@ -13,7 +13,7 @@ public class ShopManager : MonoBehaviour
     public List<Gun> ownedGuns = new List<Gun>();
     public TextMeshProUGUI noMoney;
     public TextMeshProUGUI textMoney;
-    private float money;
+    public float money;
 
     private Score scoreScript;
     public static int gun;
@@ -26,8 +26,8 @@ public class ShopManager : MonoBehaviour
         Load();
 
         //Load money from scoreScript
-        money = PlayerPrefs.GetFloat("moneySave");
-        textMoney.text = money.ToString();
+        //money += PlayerPrefs.GetFloat("moneySaveShop");
+        textMoney.text = ScoreSave.money.ToString();
         for(int i = 0; i < guns.Count; i++){
             Gun gunText = guns[i];
             gunText.textWeapon.text = gunText.gunPrice.ToString();
@@ -38,18 +38,18 @@ public class ShopManager : MonoBehaviour
     private void Update() {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            PlayerPrefs.DeleteAll();
+            PlayerPrefs.DeleteAll();    
         }
     }
 
     public void BuyGun(int index){
         Gun gunToBuy = guns[index];
 
-        if (money >= gunToBuy.gunPrice && gunToBuy.isUnlocked == false)
+        if (ScoreSave.money >= gunToBuy.gunPrice && gunToBuy.isUnlocked == false)
         {
             ownedGuns.Add(gunToBuy);
             gunToBuy.isUnlocked = true;
-            money -= gunToBuy.gunPrice;
+            ScoreSave.money -= gunToBuy.gunPrice;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             gun = index;
             Save(index);
@@ -62,7 +62,7 @@ public class ShopManager : MonoBehaviour
             gun = index;
             Save(index);
         }  
-        else if (gunToBuy.gunPrice > money)
+        else if (gunToBuy.gunPrice > ScoreSave.money)
         {
             Debug.Log("nemáš dost peněz");
             StartCoroutine(wait());
@@ -72,9 +72,9 @@ public class ShopManager : MonoBehaviour
     private void Save(int index){
         PlayerPrefs.SetInt(guns[index].gunName, 1);
         PlayerPrefs.Save();
-    } 
+    }   
         private void SaveMoney() {
-        PlayerPrefs.SetFloat("moneySaveShop", money);
+        PlayerPrefs.SetFloat("SaveShop", money);
         PlayerPrefs.Save();
     }
     private void Load(){

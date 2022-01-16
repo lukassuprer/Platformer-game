@@ -43,7 +43,6 @@ public class GameManager : MonoBehaviour
         else{
             enemyDead = false;
         }
-
         // if(enemyDead == true){
         //     StartCoroutine(enemyScore());
         // }
